@@ -1,0 +1,2034 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#073d50">
+<meta name="description" content="Kaza Cumbuco — viva o melhor do litoral cearense. Praia, conforto, experiências e dias inesquecíveis.">
+<title>Kaza Cumbuco | Seu verão começa aqui</title>
+
+<!-- FONTES -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================
+   01. CONFIGURAÇÕES E CORES DA MARCA
+========================================= */
+
+:root {
+    --ocean: #073D50;
+    --deep: #062D3A;
+    --turquoise: #19C5C2;
+    --aqua: #A7F1E8;
+    --coral: #FF735D;
+    --yellow: #FFD45C;
+    --sand: #F8F2E7;
+    --white: #FFFFFF;
+    --text: #123D48;
+    --font: 'DM Sans', sans-serif;
+    --display: 'Outfit', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    font-family: var(--font);
+    color: var(--text);
+    background: var(--sand);
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+::selection {
+    background: var(--coral);
+    color: white;
+}
+
+/* =========================================
+   02. ELEMENTOS GERAIS
+========================================= */
+
+.container {
+    width: min(1180px, 90%);
+    margin: auto;
+}
+
+.section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--coral);
+    margin-bottom: 18px;
+}
+
+.section-tag::before {
+    content: "";
+    width: 25px;
+    height: 3px;
+    background: currentColor;
+    border-radius: 5px;
+}
+
+.section-title {
+    font-family: var(--display);
+    font-size: clamp(38px, 5vw, 66px);
+    line-height: .98;
+    letter-spacing: -2.5px;
+    font-weight: 800;
+}
+
+.section-title span {
+    color: var(--turquoise);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 25px;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 13px;
+    transition: .3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+}
+
+.btn-coral {
+    color: white;
+    background: var(--coral);
+    box-shadow: 0 8px 25px rgba(255,115,93,.25);
+}
+
+.btn-coral:hover {
+    background: #f45e49;
+    box-shadow: 0 12px 30px rgba(255,115,93,.4);
+}
+
+.btn-white {
+    color: var(--ocean);
+    background: white;
+}
+
+.btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* =========================================
+   03. MENU
+========================================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 0;
+    transition: .35s;
+}
+
+header.scrolled {
+    background: rgba(6,45,58,.96);
+    backdrop-filter: blur(15px);
+    padding: 12px 0;
+    box-shadow: 0 5px 30px rgba(0,0,0,.12);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: white;
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: 27px;
+    letter-spacing: -1.5px;
+    line-height: .85;
+}
+
+.logo small {
+    display: block;
+    font-family: var(--font);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    margin-top: 7px;
+    color: var(--yellow);
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--yellow);
+}
+
+.nav-cta {
+    background: var(--yellow);
+    color: var(--ocean) !important;
+    padding: 13px 22px;
+    border-radius: 40px;
+}
+
+.menu-toggle {
+    display: none;
+    color: white;
+    border: 0;
+    background: transparent;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* =========================================
+   04. HERO CINEMATOGRÁFICO
+========================================= */
+
+.hero {
+    min-height: 760px;
+    height: 100svh;
+    max-height: 1000px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--ocean);
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, rgba(3,32,43,.78) 0%, rgba(3,32,43,.36) 55%, rgba(3,32,43,.06) 100%),
+        linear-gradient(0deg, rgba(3,32,43,.5), transparent 50%),
+        url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=2200&q=90') center 55% / cover;
+    transform: scale(1.04);
+    animation: heroZoom 15s ease-out forwards;
+}
+
+@keyframes heroZoom {
+    to { transform: scale(1); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding-top: 65px;
+}
+
+.hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,.14);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,.22);
+    padding: 11px 17px;
+    border-radius: 40px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    animation: appear .8s .2s both;
+}
+
+.hero-label i {
+    width: 8px;
+    height: 8px;
+    background: var(--yellow);
+    border-radius: 50%;
+}
+
+.hero h1 {
+    font-family: var(--display);
+    font-size: clamp(70px, 11vw, 145px);
+    line-height: .78;
+    font-weight: 900;
+    letter-spacing: -7px;
+    text-transform: uppercase;
+    animation: appear .9s .35s both;
+}
+
+.hero h1 span {
+    color: var(--yellow);
+    display: block;
+}
+
+.hero-description {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.9);
+    max-width: 400px;
+    margin: 30px 0 28px;
+    animation: appear .9s .5s both;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    animation: appear .9s .65s both;
+}
+
+.hero-location {
+    position: absolute;
+    bottom: 35px;
+    left: 5%;
+    color: white;
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.hero-location span {
+    color: var(--yellow);
+}
+
+.hero-sticker {
+    position: absolute;
+    right: 10%;
+    bottom: 16%;
+    width: 135px;
+    height: 135px;
+    border-radius: 50%;
+    background: var(--coral);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: var(--display);
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.05;
+    transform: rotate(12deg);
+    box-shadow: 0 10px 40px rgba(0,0,0,.2);
+    animation: float 4s ease-in-out infinite;
+}
+
+.hero-sticker span {
+    color: var(--yellow);
+    display: block;
+    font-size: 26px;
+}
+
+.hero-scroll {
+    position: absolute;
+    right: 5%;
+    bottom: 40px;
+    color: white;
+    writing-mode: vertical-rl;
+    font-size: 10px;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0) rotate(12deg); }
+    50% { transform: translateY(-12px) rotate(8deg); }
+}
+
+/* =========================================
+   05. FAIXA ANIMADA
+========================================= */
+
+.marquee {
+    overflow: hidden;
+    background: var(--yellow);
+    padding: 18px 0;
+    color: var(--ocean);
+    transform: rotate(-1deg) scale(1.02);
+    position: relative;
+    z-index: 3;
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 28s linear infinite;
+}
+
+.marquee-item {
+    font-family: var(--display);
+    font-size: 18px;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 0 28px;
+    letter-spacing: 1px;
+}
+
+.marquee-item span {
+    color: var(--coral);
+    padding-left: 30px;
+}
+
+@keyframes marquee {
+    to { transform: translateX(-50%); }
+}
+
+/* =========================================
+   06. SOBRE A POUSADA
+========================================= */
+
+.about {
+    padding: 145px 0 125px;
+    overflow: hidden;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+    align-items: center;
+}
+
+.about-visual {
+    position: relative;
+    min-height: 540px;
+}
+
+.about-main-img {
+    width: 85%;
+    height: 490px;
+    border-radius: 180px 180px 25px 25px;
+    object-fit: cover;
+}
+
+.about-small-img {
+    position: absolute;
+    width: 48%;
+    height: 230px;
+    right: 0;
+    bottom: 0;
+    border: 9px solid var(--sand);
+    border-radius: 20px;
+}
+
+.about-sticker {
+    position: absolute;
+    top: 30px;
+    right: 2%;
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
+    background: var(--turquoise);
+    color: var(--ocean);
+    display: grid;
+    place-items: center;
+    text-align: center;
+    font-weight: 900;
+    font-family: var(--display);
+    font-size: 13px;
+    transform: rotate(12deg);
+}
+
+.about-text .section-title {
+    margin-bottom: 25px;
+}
+
+.about-text p {
+    color: #587078;
+    line-height: 1.9;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.about-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 28px 0;
+}
+
+.feature-pill {
+    padding: 11px 16px;
+    background: white;
+    border: 1px solid #e9e4da;
+    border-radius: 40px;
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--ocean);
+}
+
+/* =========================================
+   07. ACOMODAÇÕES
+========================================= */
+
+.rooms {
+    padding: 110px 0 130px;
+    background: var(--ocean);
+    color: white;
+    position: relative;
+}
+
+.rooms::before {
+    content: "";
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 50%;
+    right: -150px;
+    top: 50px;
+}
+
+.rooms-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 30px;
+    margin-bottom: 55px;
+}
+
+.rooms .section-tag {
+    color: var(--yellow);
+}
+
+.rooms .section-title {
+    max-width: 550px;
+}
+
+.rooms .section-title span {
+    color: var(--turquoise);
+}
+
+.rooms-intro {
+    max-width: 320px;
+    color: rgba(255,255,255,.65);
+    line-height: 1.8;
+    font-size: 13px;
+}
+
+.room-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 24px;
+}
+
+.room-card {
+    background: #104c5d;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: .4s;
+}
+
+.room-card:hover {
+    transform: translateY(-10px);
+    background: #155b6c;
+}
+
+.room-image {
+    height: 290px;
+    overflow: hidden;
+    position: relative;
+}
+
+.room-image img {
+    height: 100%;
+    transition: .7s;
+}
+
+.room-card:hover .room-image img {
+    transform: scale(1.08);
+}
+
+.room-number {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    background: var(--yellow);
+    color: var(--ocean);
+    font-size: 10px;
+    font-weight: 900;
+    padding: 9px 14px;
+    border-radius: 30px;
+}
+
+.room-info {
+    padding: 25px;
+}
+
+.room-info h3 {
+    font-family: var(--display);
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.room-info p {
+    font-size: 12px;
+    line-height: 1.8;
+    color: rgba(255,255,255,.68);
+    min-height: 45px;
+}
+
+.room-link {
+    display: inline-flex;
+    margin-top: 20px;
+    align-items: center;
+    gap: 10px;
+    color: var(--yellow);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+/* =========================================
+   08. EXPERIÊNCIAS
+========================================= */
+
+.experiences {
+    padding: 125px 0;
+}
+
+.experiences-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.experiences-header .section-title {
+    max-width: 700px;
+    margin: auto;
+}
+
+.experiences-header p {
+    max-width: 500px;
+    margin: 20px auto 0;
+    color: #71838a;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    grid-template-rows: 240px 240px;
+    gap: 18px;
+}
+
+.exp-card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    color: white;
+    isolation: isolate;
+}
+
+.exp-card:first-child {
+    grid-row: span 2;
+}
+
+.exp-card img {
+    height: 100%;
+    transition: .7s;
+}
+
+.exp-card:hover img {
+    transform: scale(1.1);
+}
+
+.exp-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(0,27,36,.85), transparent 75%);
+    z-index: 0;
+}
+
+.exp-content {
+    position: absolute;
+    z-index: 1;
+    bottom: 25px;
+    left: 25px;
+}
+
+.exp-content span {
+    font-size: 10px;
+    color: var(--yellow);
+    letter-spacing: 2px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.exp-content h3 {
+    font-family: var(--display);
+    font-size: 27px;
+    margin-top: 5px;
+}
+
+/* =========================================
+   09. BANNER DE DESTAQUE
+========================================= */
+
+.highlight {
+    position: relative;
+    padding: 120px 0;
+    background:
+        linear-gradient(90deg,rgba(4,45,58,.88),rgba(4,45,58,.3)),
+        url('https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=2000&q=85') center / cover;
+    color: white;
+}
+
+.highlight-content {
+    max-width: 620px;
+}
+
+.highlight .section-tag {
+    color: var(--yellow);
+}
+
+.highlight h2 {
+    font-family: var(--display);
+    font-size: clamp(45px,7vw,85px);
+    line-height: .95;
+    letter-spacing: -3px;
+    margin-bottom: 25px;
+}
+
+.highlight h2 span {
+    color: var(--yellow);
+}
+
+.highlight p {
+    color: rgba(255,255,255,.8);
+    max-width: 420px;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* =========================================
+   10. GALERIA
+========================================= */
+
+.gallery {
+    padding: 120px 0;
+}
+
+.gallery-header {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 45px;
+}
+
+.gallery-header p {
+    color: #75868b;
+    font-size: 13px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr .8fr 1fr;
+    grid-template-rows: 230px 230px;
+    gap: 12px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 12px;
+    position: relative;
+    cursor: pointer;
+}
+
+.gallery-item:first-child {
+    grid-row: span 2;
+}
+
+.gallery-item:nth-child(4) {
+    grid-column: span 2;
+}
+
+.gallery-item img {
+    height: 100%;
+    transition: .5s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-item::after {
+    content: "+";
+    position: absolute;
+    inset: 0;
+    background: rgba(7,61,80,.35);
+    display: grid;
+    place-items: center;
+    color: white;
+    font-size: 40px;
+    opacity: 0;
+    transition: .3s;
+}
+
+.gallery-item:hover::after {
+    opacity: 1;
+}
+
+/* =========================================
+   11. LOCALIZAÇÃO
+========================================= */
+
+.location {
+    background: #DFF4EC;
+    padding: 105px 0;
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.location-text p {
+    color: #5e7a7d;
+    font-size: 14px;
+    line-height: 1.9;
+    margin: 25px 0;
+}
+
+.location-points {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.location-point {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.location-point span {
+    width: 35px;
+    height: 35px;
+    background: var(--turquoise);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+
+.location-image {
+    height: 440px;
+    border-radius: 180px 20px 20px 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.location-image img {
+    height: 100%;
+}
+
+.location-label {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    padding: 14px 20px;
+    background: var(--yellow);
+    border-radius: 30px;
+    color: var(--ocean);
+    font-weight: 900;
+    font-size: 11px;
+}
+
+/* =========================================
+   12. RESERVAS
+========================================= */
+
+.reservation {
+    padding: 115px 0;
+    background: var(--coral);
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.reservation::before,
+.reservation::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 50%;
+}
+
+.reservation::before {
+    left: -100px;
+    top: -130px;
+}
+
+.reservation::after {
+    right: -100px;
+    bottom: -160px;
+}
+
+.reservation h2 {
+    font-family: var(--display);
+    font-size: clamp(45px,7vw,82px);
+    letter-spacing: -3px;
+    line-height: .95;
+    max-width: 800px;
+    margin: 0 auto 25px;
+}
+
+.reservation h2 span {
+    color: var(--yellow);
+}
+
+.reservation p {
+    font-size: 14px;
+    color: rgba(255,255,255,.85);
+    margin-bottom: 32px;
+}
+
+.reservation .btn {
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================================
+   13. RODAPÉ
+========================================= */
+
+footer {
+    background: var(--deep);
+    color: white;
+    padding: 65px 0 25px;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding-bottom: 55px;
+}
+
+.footer-brand {
+    max-width: 300px;
+}
+
+.footer-brand .logo {
+    font-size: 35px;
+    margin-bottom: 22px;
+}
+
+.footer-brand p {
+    font-size: 12px;
+    color: rgba(255,255,255,.55);
+    line-height: 1.8;
+}
+
+.footer-column h4 {
+    color: var(--yellow);
+    font-size: 12px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-column a,
+.footer-column p {
+    display: block;
+    font-size: 12px;
+    color: rgba(255,255,255,.65);
+    margin-bottom: 13px;
+    transition: .3s;
+}
+
+.footer-column a:hover {
+    color: var(--turquoise);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.12);
+    padding-top: 22px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    color: rgba(255,255,255,.4);
+    font-size: 10px;
+}
+
+/* =========================================
+   14. WHATSAPP FLUTUANTE
+========================================= */
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: #20C96B;
+    color: white;
+    display: grid;
+    place-items: center;
+    z-index: 999;
+    box-shadow: 0 5px 25px rgba(0,0,0,.2);
+    transition: .3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-float svg {
+    width: 29px;
+    height: 29px;
+}
+
+/* =========================================
+   15. ANIMAÇÕES DE ENTRADA
+========================================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================
+   16. RESPONSIVIDADE
+========================================= */
+
+@media(max-width: 900px) {
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .about-grid,
+    .location-grid {
+        gap: 40px;
+    }
+
+    .room-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 230px 230px 230px;
+    }
+
+    .gallery-item:first-child {
+        grid-row: span 2;
+    }
+
+    .gallery-item:nth-child(4) {
+        grid-column: auto;
+    }
+}
+
+@media(max-width: 650px) {
+
+    .container {
+        width: 89%;
+    }
+
+    header {
+        padding: 17px 0;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--deep);
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 6% 25px;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: .4s;
+    }
+
+    .nav-links.open {
+        max-height: 420px;
+        opacity: 1;
+    }
+
+    .nav-links a {
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255,255,255,.1);
+        font-size: 13px;
+    }
+
+    .nav-links .nav-cta {
+        margin-top: 15px;
+        text-align: center;
+        border: none;
+        padding: 15px;
+    }
+
+    .hero {
+        min-height: 720px;
+        height: 90svh;
+    }
+
+    .hero-bg {
+        background-position: 60% center;
+    }
+
+    .hero h1 {
+        font-size: clamp(65px,16vw,100px);
+        letter-spacing: -4px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+        max-width: 300px;
+    }
+
+    .hero-sticker {
+        width: 90px;
+        height: 90px;
+        right: 7%;
+        bottom: 13%;
+        font-size: 12px;
+    }
+
+    .hero-sticker span {
+        font-size: 18px;
+    }
+
+    .hero-location {
+        bottom: 25px;
+        font-size: 9px;
+    }
+
+    .hero-scroll {
+        display: none;
+    }
+
+    .marquee {
+        padding: 14px 0;
+    }
+
+    .marquee-item {
+        font-size: 14px;
+    }
+
+    .about,
+    .experiences,
+    .gallery {
+        padding: 85px 0;
+    }
+
+    .about-grid,
+    .location-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-visual {
+        min-height: 410px;
+    }
+
+    .about-main-img {
+        height: 390px;
+    }
+
+    .about-small-img {
+        height: 170px;
+    }
+
+    .about-text {
+        padding-top: 15px;
+    }
+
+    .section-title {
+        font-size: 43px;
+        letter-spacing: -2px;
+    }
+
+    .rooms {
+        padding: 85px 0;
+    }
+
+    .rooms-heading,
+    .gallery-header {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .rooms-intro {
+        max-width: 100%;
+    }
+
+    .room-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .room-image {
+        height: 250px;
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 260px 180px 180px;
+        gap: 10px;
+    }
+
+    .exp-card:first-child {
+        grid-column: span 2;
+        grid-row: auto;
+    }
+
+    .exp-content {
+        left: 15px;
+        bottom: 15px;
+    }
+
+    .exp-content h3 {
+        font-size: 19px;
+    }
+
+    .highlight {
+        padding: 90px 0;
+        background-position: 60% center;
+    }
+
+    .highlight h2 {
+        font-size: 52px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 200px 160px 160px;
+        gap: 8px;
+    }
+
+    .location {
+        padding: 85px 0;
+    }
+
+    .location-image {
+        height: 330px;
+        border-radius: 100px 15px 15px 15px;
+    }
+
+    .reservation {
+        padding: 90px 0;
+    }
+
+    .reservation h2 {
+        font-size: 50px;
+    }
+
+    .footer-grid {
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+    }
+
+    .whatsapp-float {
+        width: 54px;
+        height: 54px;
+        bottom: 18px;
+        right: 18px;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================================
+     01. MENU PRINCIPAL
+========================================= -->
+
+<header id="header">
+    <div class="container nav">
+
+        <a href="#inicio" class="logo">
+            KAZA
+            <small>CUMBUCO</small>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+            ☰
+        </button>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#inicio">Início</a>
+            <a href="#sobre">A Kaza</a>
+            <a href="#acomodacoes">Acomodações</a>
+            <a href="#experiencias">Experiências</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#localizacao">Localização</a>
+            <a href="#reservas" class="nav-cta">Reservar agora ↗</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- =========================================
+     02. HERO
+========================================= -->
+
+<section class="hero" id="inicio">
+
+    <div class="hero-bg"></div>
+
+    <div class="container hero-content">
+
+        <div class="hero-label">
+            <i></i>
+            CUMBUCO • CEARÁ • BRASIL
+        </div>
+
+        <h1>
+            LIVE
+            <span>THE</span>
+            KAZA.
+        </h1>
+
+        <p class="hero-description">
+            Sol, mar e dias que merecem durar mais.
+            Descubra uma nova maneira de viver Cumbuco.
+        </p>
+
+        <div class="hero-actions">
+            <a href="#reservas" class="btn btn-coral">
+                Quero conhecer a Kaza ↗
+            </a>
+
+            <a href="#sobre" class="btn btn-white">
+                Explore o lugar ↓
+            </a>
+        </div>
+
+    </div>
+
+    <div class="hero-sticker">
+        YOUR
+        <span>SUMMER</span>
+        STARTS HERE
+    </div>
+
+    <div class="hero-location">
+        <span>✳</span>
+        03°37' S — CUMBUCO, CE
+    </div>
+
+    <div class="hero-scroll">SCROLL TO DISCOVER ↓</div>
+
+</section>
+
+
+<!-- =========================================
+     03. FAIXA ANIMADA
+========================================= -->
+
+<div class="marquee">
+    <div class="marquee-track">
+        <div class="marquee-item">SUNSHINE EVERY DAY <span>✳</span></div>
+        <div class="marquee-item">FEEL THE OCEAN <span>✳</span></div>
+        <div class="marquee-item">YOUR BEACH ESCAPE <span>✳</span></div>
+        <div class="marquee-item">WELCOME TO CUMBUCO <span>✳</span></div>
+        <div class="marquee-item">SUNSHINE EVERY DAY <span>✳</span></div>
+        <div class="marquee-item">FEEL THE OCEAN <span>✳</span></div>
+        <div class="marquee-item">YOUR BEACH ESCAPE <span>✳</span></div>
+        <div class="marquee-item">WELCOME TO CUMBUCO <span>✳</span></div>
+    </div>
+</div>
+
+
+<!-- =========================================
+     04. SOBRE A KAZA
+========================================= -->
+
+<section class="about" id="sobre">
+
+    <div class="container about-grid">
+
+        <div class="about-visual reveal">
+
+            <img class="about-main-img"
+            src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&w=1000&q=85"
+            alt="Hospedagem tropical">
+
+            <img class="about-small-img"
+            src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=700&q=85"
+            alt="Praia e mar">
+
+            <div class="about-sticker">
+                GOOD
+                VIBES
+                ONLY ✳
+            </div>
+
+        </div>
+
+        <div class="about-text reveal">
+
+            <div class="section-tag">MAIS QUE UMA HOSPEDAGEM</div>
+
+            <h2 class="section-title">
+                O SEU LUGAR
+                <span>AO SOL.</span>
+            </h2>
+
+            <p>
+                Existe um ritmo diferente por aqui. O vento sopra,
+                o mar chama e a vontade de ficar mais um pouco
+                aparece naturalmente.
+            </p>
+
+            <p>
+                A Kaza Cumbuco é o convite para desacelerar,
+                aproveitar bons momentos e descobrir tudo o
+                que esse pedacinho do Ceará tem de especial.
+            </p>
+
+            <div class="about-features">
+                <span class="feature-pill">☀ Clima tropical</span>
+                <span class="feature-pill">🌊 Perto do mar</span>
+                <span class="feature-pill">✳ Experiências</span>
+            </div>
+
+            <a href="#acomodacoes" class="btn btn-coral">
+                Descubra a Kaza ↗
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     05. ACOMODAÇÕES
+========================================= -->
+
+<section class="rooms" id="acomodacoes">
+
+    <div class="container">
+
+        <div class="rooms-heading reveal">
+
+            <div>
+                <div class="section-tag">SEU CANTINHO NO PARAÍSO</div>
+
+                <h2 class="section-title">
+                    CONFORTO QUE
+                    <span>COMBINA.</span>
+                </h2>
+            </div>
+
+            <p class="rooms-intro">
+                Espaços pensados para descansar, aproveitar
+                a viagem e curtir cada momento da estadia.
+            </p>
+
+        </div>
+
+        <div class="room-grid">
+
+            <article class="room-card reveal">
+
+                <div class="room-image">
+                    <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=900&q=85"
+                    alt="Quarto aconchegante">
+                    <span class="room-number">01 / ACOMODAÇÃO</span>
+                </div>
+
+                <div class="room-info">
+                    <h3>Seu refúgio</h3>
+                    <p>Um espaço confortável para descansar depois de um dia de praia.</p>
+                    <a href="#reservas" class="room-link">CONSULTAR DISPONIBILIDADE ↗</a>
+                </div>
+
+            </article>
+
+            <article class="room-card reveal">
+
+                <div class="room-image">
+                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=85"
+                    alt="Ambiente moderno">
+                    <span class="room-number">02 / ACOMODAÇÃO</span>
+                </div>
+
+                <div class="room-info">
+                    <h3>Seu momento</h3>
+                    <p>Ambientes que convidam a aproveitar cada detalhe da viagem.</p>
+                    <a href="#reservas" class="room-link">CONSULTAR DISPONIBILIDADE ↗</a>
+                </div>
+
+            </article>
+
+            <article class="room-card reveal">
+
+                <div class="room-image">
+                    <img src="https://images.unsplash.com/photo-1615874694520-474822394e73?auto=format&fit=crop&w=900&q=85"
+                    alt="Interior de hospedagem">
+                    <span class="room-number">03 / ACOMODAÇÃO</span>
+                </div>
+
+                <div class="room-info">
+                    <h3>Seu descanso</h3>
+                    <p>Mais tranquilidade e conforto para viver dias especiais.</p>
+                    <a href="#reservas" class="room-link">CONSULTAR DISPONIBILIDADE ↗</a>
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     06. EXPERIÊNCIAS
+========================================= -->
+
+<section class="experiences" id="experiencias">
+
+    <div class="container">
+
+        <div class="experiences-header reveal">
+
+            <div class="section-tag">VIVA CADA INSTANTE</div>
+
+            <h2 class="section-title">
+                CUMBUCO TEM
+                <span>ESSA ENERGIA.</span>
+            </h2>
+
+            <p>
+                Um destino que mistura aventura, natureza,
+                gastronomia e aquele clima de férias que
+                faz a gente esquecer da hora.
+            </p>
+
+        </div>
+
+        <div class="experience-grid">
+
+            <article class="exp-card reveal">
+                <img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1000&q=85"
+                alt="Praticante de surf no mar">
+
+                <div class="exp-content">
+                    <span>01 — AVENTURA</span>
+                    <h3>Kitesurf & Mar</h3>
+                </div>
+            </article>
+
+            <article class="exp-card reveal">
+                <img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=800&q=85"
+                alt="Paisagem de praia">
+
+                <div class="exp-content">
+                    <span>02 — NATUREZA</span>
+                    <h3>Paisagens</h3>
+                </div>
+            </article>
+
+            <article class="exp-card reveal">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=85"
+                alt="Restaurante">
+
+                <div class="exp-content">
+                    <span>03 — SABORES</span>
+                    <h3>Gastronomia</h3>
+                </div>
+            </article>
+
+            <article class="exp-card reveal">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=85"
+                alt="Praia paradisíaca">
+
+                <div class="exp-content">
+                    <span>04 — RELAX</span>
+                    <h3>Dias de praia</h3>
+                </div>
+            </article>
+
+            <article class="exp-card reveal">
+                <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=800&q=85"
+                alt="Ondas do mar">
+
+                <div class="exp-content">
+                    <span>05 — LIBERDADE</span>
+                    <h3>Vento & Oceano</h3>
+                </div>
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     07. BANNER DE DESTAQUE
+========================================= -->
+
+<section class="highlight">
+
+    <div class="container">
+
+        <div class="highlight-content reveal">
+
+            <div class="section-tag">A VIDA ACONTECE LÁ FORA</div>
+
+            <h2>
+                MENOS
+                PRESSA.
+                <span>MAIS PRAIA.</span>
+            </h2>
+
+            <p>
+                Deixe o relógio de lado, sinta a brisa
+                e aproveite o melhor de estar em Cumbuco.
+                Seus próximos dias podem começar aqui.
+            </p>
+
+            <a href="#reservas" class="btn btn-white">
+                Quero viver isso ↗
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     08. GALERIA
+========================================= -->
+
+<section class="gallery" id="galeria">
+
+    <div class="container">
+
+        <div class="gallery-header reveal">
+
+            <div>
+                <div class="section-tag">UM POUCO DO NOSSO UNIVERSO</div>
+                <h2 class="section-title">
+                    FEEL THE <span>VIBE.</span>
+                </h2>
+            </div>
+
+            <p>Momentos, lugares e paisagens<br>que fazem tudo valer a pena.</p>
+
+        </div>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item reveal">
+                <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=900&q=85" alt="Mar azul">
+            </div>
+
+            <div class="gallery-item reveal">
+                <img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=700&q=85" alt="Praia tropical">
+            </div>
+
+            <div class="gallery-item reveal">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=700&q=85" alt="Areia e mar">
+            </div>
+
+            <div class="gallery-item reveal">
+                <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&w=900&q=85" alt="Hospedagem">
+            </div>
+
+            <div class="gallery-item reveal">
+                <img src="https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=700&q=85" alt="Destino tropical">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     09. LOCALIZAÇÃO
+========================================= -->
+
+<section class="location" id="localizacao">
+
+    <div class="container location-grid">
+
+        <div class="location-text reveal">
+
+            <div class="section-tag">SEU PRÓXIMO DESTINO</div>
+
+            <h2 class="section-title">
+                BEM-VINDO
+                AO <span>CUMBUCO.</span>
+            </h2>
+
+            <p>
+                No litoral de Caucaia, a poucos quilômetros
+                de Fortaleza, Cumbuco reúne praias, dunas,
+                ventos perfeitos para o kitesurf e uma
+                atmosfera que conquista quem chega.
+            </p>
+
+            <div class="location-points">
+
+                <div class="location-point">
+                    <span>🌊</span>
+                    Litoral do Ceará
+                </div>
+
+                <div class="location-point">
+                    <span>☀</span>
+                    Sol e clima tropical
+                </div>
+
+                <div class="location-point">
+                    <span>✈</span>
+                    Próximo a Fortaleza
+                </div>
+
+            </div>
+
+            <a href="https://www.google.com/maps/search/?api=1&query=Cumbuco+Caucaia+Ceara"
+            target="_blank" rel="noopener" class="btn btn-coral">
+                Explorar localização ↗
+            </a>
+
+        </div>
+
+        <div class="location-image reveal">
+
+            <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1100&q=85"
+            alt="Paisagem litorânea">
+
+            <div class="location-label">
+                CUMBUCO • CEARÁ • BRASIL
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     10. RESERVAS
+========================================= -->
+
+<section class="reservation" id="reservas">
+
+    <div class="container reveal">
+
+        <div class="section-tag" style="color:white;justify-content:center;">
+            SUA PRÓXIMA VIAGEM COMEÇA AQUI
+        </div>
+
+        <h2>
+            O PARAÍSO
+            ESTÁ CHAMANDO.
+            <span>VEM PRA KAZA!</span>
+        </h2>
+
+        <p>
+            Consulte as datas disponíveis e venha viver
+            Cumbuco de um jeito especial.
+        </p>
+
+        <a href="#" class="btn btn-white whatsapp-link">
+            Falar sobre minha reserva ↗
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     11. RODAPÉ
+========================================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+
+                <a href="#inicio" class="logo">
+                    KAZA
+                    <small>CUMBUCO</small>
+                </a>
+
+                <p>
+                    Seu refúgio no litoral cearense.
+                    Dias de sol, mar e experiências
+                    para levar na memória.
+                </p>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h4>Explore</h4>
+                <a href="#sobre">A Kaza</a>
+                <a href="#acomodacoes">Acomodações</a>
+                <a href="#experiencias">Experiências</a>
+                <a href="#galeria">Galeria</a>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h4>Encontre-nos</h4>
+                <p>Cumbuco, Caucaia - CE</p>
+                <a href="#localizacao">Como chegar ↗</a>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h4>Reservas</h4>
+                <a href="#" class="whatsapp-link">WhatsApp ↗</a>
+                <a href="#reservas">Consultar disponibilidade</a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 Kaza Cumbuco. Todos os direitos reservados.</span>
+            <span>FEITO PARA VIVER O VERÃO. ☀</span>
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================
+     12. WHATSAPP FLUTUANTE
+========================================= -->
+
+<a href="#" class="whatsapp-link whatsapp-float" aria-label="Fale conosco pelo WhatsApp">
+
+    <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+        <path d="M16 .5A15.4 15.4 0 0 0 2.8 23.8L.7 31.5l7.9-2.1A15.5 15.5 0 1 0 16 .5zm0 28.2c-2.4 0-4.7-.7-6.7-2l-.5-.3-4.7 1.2 1.3-4.6-.3-.5A12.7 12.7 0 1 1 16 28.7zm7-9.5c-.4-.2-2.2-1.1-2.6-1.2-.3-.1-.6-.2-.8.2-.3.4-1 1.2-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.8-2.2-2-2.6-.2-.4 0-.6.2-.8l.6-.7c.2-.2.2-.4.4-.6.1-.3 0-.5 0-.7-.1-.2-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.5-.3.4-1.2 1.2-1.2 3 0 1.8 1.3 3.5 1.5 3.8.2.2 2.5 3.9 6.1 5.4.9.4 1.6.6 2.1.7.9.3 1.7.2 2.3.1.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.2-.3-.3-.7-.5z"/>
+    </svg>
+
+</a>
+
+
+<!-- =========================================
+     13. JAVASCRIPT
+========================================= -->
+
+<script>
+
+/* =========================================
+   CONFIGURAÇÕES EDITÁVEIS
+========================================= */
+
+// COLOQUE AQUI O WHATSAPP DA POUSADA
+// Formato: 5585999999999
+const WHATSAPP = "5585999999999";
+
+const MENSAGEM =
+    "Olá! Conheci a Kaza Cumbuco pelo site e gostaria de consultar disponibilidade e valores para hospedagem.";
+
+
+/* =========================================
+   LINKS DO WHATSAPP
+========================================= */
+
+const whatsappURL =
+    `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(MENSAGEM)}`;
+
+document.querySelectorAll(".whatsapp-link").forEach(link => {
+    link.href = whatsappURL;
+    link.target = "_blank";
+    link.rel = "noopener";
+});
+
+
+/* =========================================
+   MENU MOBILE
+========================================= */
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+
+    const aberto = navLinks.classList.toggle("open");
+
+    menuToggle.textContent = aberto ? "✕" : "☰";
+    menuToggle.setAttribute("aria-expanded", aberto);
+
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navLinks.classList.remove("open");
+        menuToggle.textContent = "☰";
+        menuToggle.setAttribute("aria-expanded", "false");
+
+    });
+
+});
+
+
+/* =========================================
+   HEADER AO ROLAR A PÁGINA
+========================================= */
+
+const header = document.getElementById("header");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
+    }
+
+});
+
+
+/* =========================================
+   ANIMAÇÕES DE ENTRADA
+========================================= */
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("active");
+            observer.unobserve(entry.target);
+
+        }
+
+    });
+
+}, {
+    threshold: 0.12
+});
+
+document.querySelectorAll(".reveal").forEach(element => {
+    observer.observe(element);
+});
+
+</script>
+
+</body>
+</html>
